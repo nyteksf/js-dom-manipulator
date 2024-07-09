@@ -25,7 +25,7 @@
             href="https://fonts.googleapis.com/css?family=Open+Sans"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="./css/styles.css" type="text/css">
+        <link rel="stylesheet" href="./css/styles.css" type="text/css" />
         <script src="./js/app.js"></script>
     </head>
     <body>
@@ -36,56 +36,59 @@
         <!-- NOTE: THE USER HAS OPTION TO SAVE COLOR CHOICES   -->
         <!-- NOTE: ALL HTML IS W3 VALIDATED, JS TIDIED         -->
         <!-- ------------------------------------------------- -->
-
         <div class="container">
-            <form>
-                <div class="input-group">
-                    <label for="inputColor">
-                        <button id="btn-getRndmColor" title="Random Color">
-                            Click here for a random background color
+            <div class="app">
+                <form>
+                    <div class="input-group">
+                        <label for="inputColor">
+                            <button id="btn-getRndmColor" title="Random Color">
+                                Click here for a random background color
+                            </button>
+                        </label>
+                        <button id="btn-wipeInput" class="btn btn-default">
+                            <i class="fa fa-times"></i>
                         </button>
-                    </label>
-                    <button id="btn-wipeInput" class="btn btn-default">
-                        <i class="fa fa-times"></i>
-                    </button>
-                    <input
-                        type="text"
-                        id="inputColor"
-                        class="form-control"
-                        placeholder="Input Color: E.g. aliceblue, #abc123, or hsla(24,30%,34%,.3)"
-                    />
-                    <span class="input-group-btn">
-                        <button
-                            id="btn-submitColor"
-                            class="btn btn-default"
-                            type="button"
-                            title="Submit Custom"
+                        <input
+                            type="text"
+                            id="inputColor"
+                            class="form-control"
+                            placeholder="Input Color: E.g. aliceblue, #abc123, or hsla(24,30%,34%,.3)"
+                        />
+                        <span class="input-group-btn">
+                            <button
+                                id="btn-submitColor"
+                                class="btn btn-default"
+                                type="button"
+                                title="Submit Custom"
+                            >
+                                <i class="fa fa-reply"></i>
+                            </button>
+                        </span>
+                    </div>
+                    <br />
+                    <div class="ui-swatch-box">
+                        <div id="swatch0" class="ui-swatch"></div>
+                        <div id="swatch1" class="ui-swatch"></div>
+                        <div id="swatch2" class="ui-swatch"></div>
+                        <div id="swatch3" class="ui-swatch"></div>
+                        <div id="swatch4" class="ui-swatch"></div>
+                        <div id="swatch5" class="ui-swatch"></div>
+                    </div>
+                    <div class="form-check">
+                        <input
+                            type="checkbox"
+                            class="form-check-input"
+                            id="checkRememberChoices"
+                        />
+                        <label
+                            class="form-check-label"
+                            for="checkRememberChoices"
+                            >Remember Choices</label
                         >
-                            <i class="fa fa-reply"></i>
-                        </button>
-                    </span>
-                </div>
-                <br />
-                <div class="ui-swatch-box">
-                    <div id="swatch0" class="ui-swatch"></div>
-                    <div id="swatch1" class="ui-swatch"></div>
-                    <div id="swatch2" class="ui-swatch"></div>
-                    <div id="swatch3" class="ui-swatch"></div>
-                    <div id="swatch4" class="ui-swatch"></div>
-                    <div id="swatch5" class="ui-swatch"></div>
-                </div>
-                <div class="form-check">
-                    <input
-                        type="checkbox"
-                        class="form-check-input"
-                        id="checkRememberChoices"
-                    />
-                    <label class="form-check-label" for="checkRememberChoices"
-                        >Remember Choices</label
-                    >
-                </div>
-                <div class="clear"></div>
-            </form>
+                    </div>
+                    <div class="clear"></div>
+                </form>
+            </div>
         </div>
     </body>
 </html>
