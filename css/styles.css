@@ -93,7 +93,7 @@ input#checkRememberChoices {
 
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .btn-group {
-    margin-top: 2px;
+    margin-top: 1px;
     position: relative;
     top: 17px;
     padding-top: 7px;
