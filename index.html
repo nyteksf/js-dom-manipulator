@@ -1,94 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>JavaScript DOM Manipulation</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-        <script src="./js/jquery-ui.js"></script>
-        <script src="./js/tinycolor.js"></script>
-        <script src="./js/ntc.js"></script>
-        <script src="./js/bootstrap.js"></script>
-        <link
-            rel="stylesheet"
-            href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-        />
-        <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        />
-        <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
-        <link
-            href="https://fonts.googleapis.com/css?family=Open+Sans"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="./css/styles.css" type="text/css" />
-        <script src="./js/app.js"></script>
-    </head>
-    <body>
-        <!-- ------------------------------------------------- -->
-        <!-- OBJECTIVE: ALLOW USER INPUT OF CUSTOM COLORS      -->
-        <!-- OR SELECT A PREDEFINED COLOR FROM LIST            -->
-        <!-- ------------------------------------------------- -->
-        <!-- NOTE: THE USER HAS OPTION TO SAVE COLOR CHOICES   -->
-        <!-- NOTE: ALL HTML IS W3 VALIDATED, JS TIDIED         -->
-        <!-- ------------------------------------------------- -->
-        <div class="container">
-            <div class="app">
-                <form>
-                    <div class="input-group">
-                        <label for="inputColor">
-                            <button id="btn-getRndmColor" title="Random Color">
-                                Click here for a random background color
-                            </button>
-                        </label>
-                        <button id="btn-wipeInput" class="btn btn-default">
-                            <i class="fa fa-times"></i>
-                        </button>
-                        <input
-                            type="text"
-                            id="inputColor"
-                            class="form-control"
-                            placeholder="Input Color: E.g. aliceblue, #abc123, or hsla(24,30%,34%,.3)"
-                        />
-                        <span class="input-group-btn">
-                            <button
-                                id="btn-submitColor"
-                                class="btn btn-default"
-                                type="button"
-                                title="Submit Custom"
-                            >
-                                <i class="fa fa-reply"></i>
-                            </button>
-                        </span>
-                    </div>
-                    <br />
-                    <div class="ui-swatch-box">
-                        <div id="swatch0" class="ui-swatch"></div>
-                        <div id="swatch1" class="ui-swatch"></div>
-                        <div id="swatch2" class="ui-swatch"></div>
-                        <div id="swatch3" class="ui-swatch"></div>
-                        <div id="swatch4" class="ui-swatch"></div>
-                        <div id="swatch5" class="ui-swatch"></div>
-                    </div>
-                    <div class="form-check">
-                        <input
-                            type="checkbox"
-                            class="form-check-input"
-                            id="checkRememberChoices"
-                        />
-                        <label
-                            class="form-check-label"
-                            for="checkRememberChoices"
-                            >Remember Choices</label
-                        >
-                    </div>
-                    <div class="clear"></div>
-                </form>
-            </div>
-        </div>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Dom Manipulator</title>
+</head>
+<body>
+    <!-- ------------------------------------------------- -->  
+    <!-- OBJECTIVE: ALLOW USER INPUT OF CUSTOM COLORS      -->
+    <!-- OR SELECT A PREDEFINED COLOR FROM LIST            -->
+    <!-- ------------------------------------------------- -->  
+    <!-- NOTE: THE USER HAS OPTION TO SAVE COLOR CHOICES   -->
+    <!-- ------------------------------------------------- -->
+      
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css"> 
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" type="application/javascript"></script>
+    <script src="./js/app.js" type="application/javascript"></script>
+    <script src="./js/bootstrap.min.js" type="application/javascript"></script>
+    <script src="./js/jquery-ui.min.js" type="application/javascript"></script>
+    <script src="./js/ntc.js" type="application/javascript"></script>
+    <script src="./js/tinycolor.js" type="application/javascript"></script>
+    <div class="container">
+        <form>
+          <div class="input-group">
+              <label for="inputColor"><button id="btn-getRndmColor" title="Random Color">Click here for a random background color</button></label>
+              <button id="btn-wipeInput" class="btn btn-default"><i class="fa fa-times"></i>
+
+</button>
+              <input type="text" id="inputColor" class="form-control" placeholder="Input Color: E.g. aliceblue, #abc123, or hsla(24,30%,34%,.3)">
+              <span class="input-group-btn">
+                <button id="btn-submitColor" class="btn btn-default" type="button" title="Submit Custom"><i class="fa fa-reply"></i></button>
+              </span>
+          </div>    
+            <br/>
+          <div class="ui-swatch-box">
+            <div id="swatch0" class="ui-swatch"></div>
+            <div id="swatch1" class="ui-swatch"></div>
+            <div id="swatch2" class="ui-swatch"></div>
+            <div id="swatch3" class="ui-swatch"></div>
+            <div id="swatch4" class="ui-swatch"></div>
+            <div id="swatch5" class="ui-swatch"></div>
+          </div>    
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="checkRememberChoices">
+            <label class="form-check-label" for="checkRememberChoices">Remember Choices</label>
+          </div>
+          <div class="clear"></div>
+        </form>
+    </div>
+</body>
 </html>
