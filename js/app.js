@@ -1578,7 +1578,7 @@ $(document).ready(function() {
     }
   
     /* LOAD LIST OF NAMES INTO AUTOCOMPLETE */
-    $("#inputColor").autocomplete({
+    $("#input__color").autocomplete({
       source: availableCSSColors
     });
   
@@ -1605,7 +1605,7 @@ $(document).ready(function() {
       var tColor = tinycolor(ntc.name(randCol)[0]);
       $("body").css("color", "lightgray");
       $("body").css("background-color", randCol);
-      $("#btn-wipeInput").css("visibility", "visible");
+      $("#btn__wipe-input").css("visibility", "visible");
         
       /* ADD ERROR CHECKING FOR CURRENT COLOR IN MEMORY STACK TO PREVENT REPEATS */  
       if (usedColorStack > 0 && usedColorStack.pop() === randCol) {
@@ -1619,12 +1619,12 @@ $(document).ready(function() {
       }
   
       /* OUTPUT RESULT TO SCREEN */
-      if (arraySearch(sourceColorArray, $("#inputColor").val(), "hex") !== false) {
-          $("#inputColor").val(ntc.name(randCol)[1]);
-      } else { $("#inputColor").val(randCol.toUpperCase()); }
+      if (arraySearch(sourceColorArray, $("#input__color").val(), "hex") !== false) {
+          $("#input__color").val(ntc.name(randCol)[1]);
+      } else { $("#input__color").val(randCol.toUpperCase()); }
         
       /* PREPARE SWATCH FOR RANDCOL */
-      $("#inputColor").attr("title", randCol + " | " + tColor.toHslString());
+      $("#input__color").attr("title", randCol + " | " + tColor.toHslString());
   
       if (usedColorStack.length >= 1) {
         setSwatchColors();
@@ -1632,13 +1632,13 @@ $(document).ready(function() {
     });
   
     /* SUBMIT BTN FUNCTIONALITY */
-    $("#btn-submitColor").click(function(e) {
+    $("#btn__submit-color").click(function(e) {
       e.preventDefault();
-      var $userInputColor = $("#inputColor").val();
+      var $userinput__color = $("#input__color").val();
       var inputToHex = "";
-      var curColorToHex = tinycolor($("#inputColor").val()).toHexString();
+      var curColorToHex = tinycolor($("#input__color").val()).toHexString();
       if (curColorToHex === "#000000") {
-        curColorToHex = arraySearch(sourceColorArray, $("#inputColor").val());
+        curColorToHex = arraySearch(sourceColorArray, $("#input__color").val());
       }
       
       $("body").css("color", "lightgray");
@@ -1647,17 +1647,17 @@ $(document).ready(function() {
       /* PREVENT SAVING THE SAME COLOR TWICE OR MORE IN A ROW */  
       //var lastColorUsed = usedColorStack.pop();
       if (usedColorStack.length > 0) {
-          if (usedColorStack.includes($("#inputColor").val().toLowerCase())) {
+          if (usedColorStack.includes($("#input__color").val().toLowerCase())) {
               throw new Error("Repeat Color Entry Denied. Select another color please.");
           }
       };
         
-      if ($("#inputColor").val().length === undefined || $("#inputColor").val() === "") {
+      if ($("#input__color").val().length === undefined || $("#input__color").val() === "") {
         throw new Error("Invalid Color Entry. Try again.");
       }
         
       /* MAKE WIPE DATA BUTTON VISIBLE */
-      $("#btn-wipeInput").css("visibility", "visible");
+      $("#btn__wipe-input").css("visibility", "visible");
         
       /* HANDLE MEMORY-MODE FEATURES */
       if ($("#checkRememberChoices:checked").length > 0 && usedColorStack.length > 5) {
@@ -1670,27 +1670,27 @@ $(document).ready(function() {
             setSwatchColors();
         }
       }
-      colorSearchResult = arraySearch(sourceColorArray, $("#inputColor").val());
-      colorSearchResult === false ? $("#inputColor").val() : curColorToHex;
+      colorSearchResult = arraySearch(sourceColorArray, $("#input__color").val());
+      colorSearchResult === false ? $("#input__color").val() : curColorToHex;
         
         /* TRY SEARCHRESULT FIRST, IF NOT FOUND, TRY AS IS */
       if (colorSearchResult !== false) { /* Use Translated Color */
         $("body").css("background-color", colorSearchResult);
       } else {
-        $("body").css("background-color", $userInputColor); /* Try Color As Is */
+        $("body").css("background-color", $userinput__color); /* Try Color As Is */
       }
-      $("#inputColor").attr("title", colorSearchResult + " | " + tinycolor(colorSearchResult).toHslString());    
+      $("#input__color").attr("title", colorSearchResult + " | " + tinycolor(colorSearchResult).toHslString());    
     });
   
     /* DO STUFF WITH SWATCHES ON CLICK */
-    $(".ui-swatch-box .ui-swatch").click(function() {
+    $(".ui-swatch__box .ui-swatch").click(function() {
       /* PREVENT CLICKS ON UNSET SWATCHES */
       if ($(this).attr("color")  === undefined) return false;
         
       /* CONVERT HEX BACK INTO NAME IF POSSIBLE: */
       /* BUT IF NOT, POST HEX COLOR TO INPUT INSTEAD */
       /* SEARCH BELOW FOR NAME, THEN USE AS HEX OTHERWISE: */
-      $("#btn-wipeInput").css("visibility", "visible");
+      $("#btn__wipe-input").css("visibility", "visible");
          
       var colorToInput = arraySearch(sourceColorArray, $(this).attr("color").slice(1).toUpperCase(), "hex");
       
@@ -1707,13 +1707,13 @@ $(document).ready(function() {
   
         /* INJECT WORD OR HEX COLOR CODE INTO INPUT */      
         if (arraySearch(sourceColorArray, $(this).attr("color").slice(1).toUpperCase(), "hex") === false) {
-            $("#inputColor").val(colorToInput);      
+            $("#input__color").val(colorToInput);      
         } else { 
-            $("#inputColor").val(ntc.name($(this).attr("color"))[1]);
+            $("#input__color").val(ntc.name($(this).attr("color"))[1]);
         }
         
       /* APPLY MOUSEOVER TOOLTIP STYLE DETAILS & CHANGE BGCOLOR */  
-      $("#inputColor").attr("title", "#"+$(this).attr("color").slice(1).toUpperCase() + " | " + tinycolor($(this).attr("color")).toHsvString());
+      $("#input__color").attr("title", "#"+$(this).attr("color").slice(1).toUpperCase() + " | " + tinycolor($(this).attr("color")).toHsvString());
       $("body").css("background-color", $(this).attr("color")); //RETURN COLOR IN HEX FORM
     });
   
@@ -1742,7 +1742,7 @@ $(document).ready(function() {
     }
   
     var gray = ColorLuminance('#333',.24);
-    $('#btn-wipeInput').hover(function() {
+    $('#btn__wipe-input').hover(function() {
       $('.fa-times').toggleClass('lightenColor');
     });
   
@@ -1781,23 +1781,23 @@ $(document).ready(function() {
     }
   
     /* SHOW/HIDE/CLEAR INPUT BAR BUTTON */
-    $("#inputColor").on("input", function() {
-      if ($('#inputColor').val() === "") {
+    $("#input__color").on("input", function() {
+      if ($('#input__color').val() === "") {
         /* HIDE BUTTON WHEN INPUT BAR EMPTY */
-        $("#btn-wipeInput").css("visibility", "hidden");
+        $("#btn__wipe-input").css("visibility", "hidden");
       } else {
         /* SHOW BUTTON WHEN INPUT BAR NOT EMPTY */
-        $("#btn-wipeInput").css("visibility", "visible");
+        $("#btn__wipe-input").css("visibility", "visible");
       }
     });
   
     /* RESET ENVIRONMENT ON CLICK */    
-    $("#btn-wipeInput").click(function(e) {
+    $("#btn__wipe-input").click(function(e) {
       e.preventDefault();
-      $("#inputColor").val("");
-      $("#btn-wipeInput").css("visibility", "hidden");
-      $("#inputColor").attr("title","");
-      $("#inputColor").focus();
+      $("#input__color").val("");
+      $("#btn__wipe-input").css("visibility", "hidden");
+      $("#input__color").attr("title","");
+      $("#input__color").focus();
     });
   });
   

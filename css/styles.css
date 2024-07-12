@@ -42,7 +42,7 @@ body {
     color: #747474 !important;    
   }
     
-  input#inputColor {
+  input#input__color {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
     font-family: 'Open Sans', sans-serif;
@@ -51,19 +51,19 @@ body {
   } 
 
   /* Ensure that input placeholder centered */    
-  input#inputColor::-webkit-input-placeholder { 
+  input#input__color::-webkit-input-placeholder { 
     position: relative;
     top: -1px;
   }
-  input#inputColor::-moz-placeholder { 
+  input#input__color::-moz-placeholder { 
     position: relative;
     top: -1px;
   }     
-  input#inputColor:-ms-input-placeholder { 
+  input#input__color:-ms-input-placeholder { 
     position: relative;
     top: -1px;
   }
-  input#inputColor:-moz-placeholder { /* Firefox 18- */
+  input#input__color:-moz-placeholder { /* Firefox 18- */
     position: relative;
     top: -1px;
   }    
@@ -107,7 +107,7 @@ body {
     height: 100px;
   }
   
-  .ui-swatch-box {
+  .ui-swatch__box {
     text-align: center;
     float: left;
     margin-top: -15px;
@@ -130,7 +130,7 @@ body {
     background-color: hsla(0,0%,0%,0.35);
   }
 
-  #btn-wipeInput {
+  #btn__wipe-input {
     position: absolute;
     left: 397px;
     top: 37px;
