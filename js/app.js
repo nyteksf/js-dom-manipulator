@@ -1801,3 +1801,18 @@ $(document).ready(function() {
     });
   });
   
+  let lastStoredColor = "";
+  $("#input__color").on("keypress", function (e) {
+  
+
+  if (e.which === 13) { // 13 IS ENTER KEY CODE
+    e.preventDefault();
+    
+    if (lastStoredColor !== $("#input__color").val()) {
+      console.log(lastStoredColor)
+      console.log($("#input__color").val())
+      lastStoredColor = $("#input__color").val();
+      $("#btn__submit-color").click();
+    }
+  }
+});
